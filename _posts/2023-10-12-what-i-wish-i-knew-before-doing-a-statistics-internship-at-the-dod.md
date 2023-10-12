@@ -1,0 +1,38 @@
+---
+layout: post
+title:  "What I Wish I Knew Before Doing a Statistics internship at the DoD"
+author: "William Martindale"
+description: "Things to know before doing an internship with the DOD."
+image: /assets/images/blog-image.jpg
+---
+
+# What I Wish I Knew Before Doing an Internship With the DOD
+
+So, you've started looking for jobs at the DOD. Perhaps you're planning to embark on a long career of government service, or you're just trying it on for size before deciding what you want to do with your life, or maybe you're using it as a stepping stone to something else. Whatever the case, here are a few things you might like to know.
+
+### What makes me qualified to talk about this?
+I did an internship at Naval Sea Systems Command (NAVSEA) in Summer 2021 where I analyzed already collected data to examine the root causes of fires on ships and suggest further steps, such as new methods for collecting and analyzing data. Of course, this was during the pandemic, and things have changed somewhat since then, but the main points of this post will still hold true now. After all, we might not all be working from home, but the culture and workings of the government remain the same. 
+
+So without further ado, let's get to the main topic!
+
+### 1. You might not get to use the tools you want to use
+This might be the biggest shock you get when you finally arrive at work. You've gotten through hours of onboarding, been introduced to your manager and your desk, you're finally able to insert your CAC card into your computer and log in only to find that your favorite tool isn't included on your machine. There's no RStudio, no VSCode, no bash client. What gives?
+The DOD has to individually approve the use every software application an employee would like to use. If the software you want isn't already approved, then you can't use it, plain and simple. Fortunately, the most popular applications for doing statistics have already been approved, because there are many data scientists and statisticians at the DOD. But that's not the whole story. Individual departments also have their own approved software, and the IT department will not install software onto your computer unless you can demonstrate a work need to have it installed. Your computer will come pre-loaded with the software that IT believes you will need for your job, but if you want other software you will have to request it through via your supervisor.
+It can take a long time to get new software approved. When I started my internship, my laptop only came with Excel, so I and my supervisor requested that RStudio be installed on my laptop. I expected this wouldn't take long, because R and RStudio are widely used in the DOD. But, by the time I left, my request still hadn't been approved. However, my co-workers were impressed with my description of the capabilities of R, and since I left instructions on how to replicate my work in RStudio, as well as some instructions on how to do some further analysis in R that couldn't be done in Excel. A year later, when I asked my old supervisor if he would be willing to act as a reference for another job, he mentioned that they still hadn't been able to get R installed on their computers. 
+All that said, this is part of the reason why as statisticians we learn to use multiple tools. The ones we like might not always be around, and it's good to have a little bit of experience in a lot so that we're not completely stuck.
+
+### 2. You might not know who you're going to work for until your clearance is approved
+In the US government, it's standard practice for an entire department or an entire office to take applications and send them to all of their departments to see who's interested in taking a particular applicant. This can lead to some unusual scenarios. For example, in 2022, when I applied for a fellowship at the FDA, I received two interview offers—from the same office, on the same day, In fact, I interviewed with them both on the same day, and when I received a fellowship offer from both, I chose the one with the more interesting project.
+Of course, if this is your first internship, this is not likely to happen, but something quite similar is: you're probably not going to know exactly what your position is until your clearance is approved. If you thought that the job description you were applying for was rather vague, this is why: the government literally does not know who is going to take you, and they aren't going to tell you until after your clearance is approved.
+There are some downsides to this: you might get put onto a project or into a department that you frankly find boring! But, it also means that you will be going to an office that chose a project for you based on your individual skill set. That is, it means they genuinely want you to be there and are excited to see what insights you can bring to the table! This is not the case in many organizations, and it's one of the intangible benefits of doing an internship with the government.
+
+### 3. You're not just there to work
+Interning at the government isn't just a work experience opportunity, and the people you are working with are very aware of this. Expect to be encouraged to network everywhere you go, and take advantage of the opportunity! Even if you're not planning to work in the government, there are people there from all walks of life who may have insights for your future career. Nearly everyone I worked with at NAVSEA had an advanced degree, often a PhD, and many of them worked in industry before going to the government. If you're looking for career or graduate school advice, this is one of the best places to get it, even if quite a lot of the advice will consist of ways you can get your graduate degree paid for by working for the government. 
+While I was at NAVSEA, I was also invited to the Sea Air Space defense expo. Expos like these are another great opportunity to network, because they expose you to research and development being done at throughout the entire defense industry. Presenters are genuinely happy to talk to students and, just like your co-workers, will have many insights for what kinds of things you can do in the future. Don't discount someone just because it seems like their work doesn't have anything to do with what you're interested in! Even the _reasons_ why they're interested in the work they do might help you decide what you want to do with your future, or open you up to possibilities that you hadn't considered.
+
+### 4. Change is possible, and you're a part of it
+At your internship, you will be working on a genuinely important problem. I was working on shipboard fires, yours will be something at least as important to US national defence. It's important that you take the work seriously, because one day lives will be at stake because of it!
+That said, at times, this may seem incongruous with the glacial pace of work at the DOD, something of which I am personally and painfully aware. At the end of my week-long onboarding process, I was handed my CAC card and my laptop, only to find that my laptop was referring to me as a corporal and seemed to have given me a new middle name. After some investigation, we learned when my account had been created, IT had confused me for a retired army officer with the same first and last name, and associated his account with my CAC card. Naturally, I couldn't use my card to log in to the computer because he had different clearance from me, which meant that for the entire week that IT spent fixing my account, I couldn't do any work on the computer.
+
+
+### Conclusion: The government can be frustrating, but it's a great place to learn
