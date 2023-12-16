@@ -15,8 +15,8 @@ This was widely reported at the time, most famously by [The Economist](https://w
 <p align="center">
 
 ![image](https://github.com/WiJaMa/wijama.github.io/assets/73615879/48417fb0-10c6-4209-a787-41d48fa397bc)
-
 _Li Keqiang in 2019_ [_Image Source_](https://commons.wikimedia.org/wiki/File:Shinz%C5%8D_Abe_Li_Keqiang_20191225_(1)_(cropped).jpg)
+
 </p>
 
 # Project
@@ -25,6 +25,8 @@ I wanted to see whether this index was actually a good reflection of modern econ
 The measurement of democracy is, of course, a widely contested field. The two most famous indices dedicated to measuring democracy are the Economist Democracy Index and the V-Dem Democracy Indices. The latter are plural because V-Dem (or, the Varieties of Democracy Institute) developed multiple indices to measure different types of democracy: electoral, liberal, participatory, deliberative, and egalitarian. For simplicity, I chose to use the Economist Democracy Index.
 
 For control variables, I also included in my analysis the percentage of the economy made of services and the percentage of the population that was urban. I anticipated that these would have some effect on how, accurate the Li Keqiang index would be.
+
+All of the variables included were used in their total, rather than per capita form. This is because Li Keqiang seemed to have been interested in total economic output of his province rather than per capita output. While this means there are likely to be outliers (in the form of the US and China, by far the world's largest economy), it is a more accurate reflection of his index.
 
 Because the Economist Democracy Index only includes the years 2006, 2008, and 2010-2022, those were the only years included in the analysis. This is where the V-Dem indices would likely have been more useful; they evaluate countries as far back as the year 1900. The data on the other indicators only ran as far forward as 2020, so the years used were 2006-2020.
 
@@ -171,16 +173,36 @@ keqiang.to_csv('keqiang.csv', index = False)
 # Exploratory Data Analysis
 Most of the exploratory data analysis was performed in Seaborn. This blog post assumes that the reader knows the basics of Seaborn and does not need the Seaborn commands used explained to them.
 
-The rail cargo and GDP graphs are extremely right-skewed:
+The rail cargo, electricity consumption, and GDP graphs are extremely right-skewed:
 
-![image](https://github.com/WiJaMa/wijama.github.io/assets/73615879/1750a560-34b1-4236-a717-348650658598) ![image](https://github.com/WiJaMa/wijama.github.io/assets/73615879/42035b33-9553-4024-821f-6decddae6fb1)
+![image](https://github.com/WiJaMa/wijama.github.io/assets/73615879/1750a560-34b1-4236-a717-348650658598) ![image](https://github.com/WiJaMa/wijama.github.io/assets/73615879/42035b33-9553-4024-821f-6decddae6fb1) ![image](https://github.com/WiJaMa/wijama.github.io/assets/73615879/bca42fe2-b284-49e3-a406-d6f5797e0af4)
 
 However, they match a normal distribution much better when they are logarithmed:
 
-![image](https://github.com/WiJaMa/wijama.github.io/assets/73615879/54b9deeb-9f5f-4222-92be-848a966280b2) ![image](https://github.com/WiJaMa/wijama.github.io/assets/73615879/ea16c106-f32f-481e-ba40-1e50756c7be0)
+![image](https://github.com/WiJaMa/wijama.github.io/assets/73615879/54b9deeb-9f5f-4222-92be-848a966280b2) ![image](https://github.com/WiJaMa/wijama.github.io/assets/73615879/ea16c106-f32f-481e-ba40-1e50756c7be0) ![image](https://github.com/WiJaMa/wijama.github.io/assets/73615879/b7e97728-21be-47bc-90cc-d0734f598273)
+
 
 A countplot of data points be region reveals some other concerns:
 
 ![image](https://github.com/WiJaMa/wijama.github.io/assets/73615879/ba311bcc-7b61-4b02-985f-90404f9bd9ee)
 
 Most of the data points are from Europe. In our data wrangling, I implicitly decided to throw out any data point that didn't have every one of the variables I was examining. However, in doing so, I filtered out quite a bit of Latin America, Africa, and Asia. The effect was so great that Latin America only had 12 more data points than North America, a region which consists entirely of two countries, the United States and Canada. This could result in an implicit bias in our data set.
+
+In fact, 42 out of the 93 countries in the data set are missing at least one value. Most of these are in the Middle East and Africa:
+
+![image](https://github.com/WiJaMa/wijama.github.io/assets/73615879/009eb738-b62c-4fc0-82bb-6c27ec9237ae)
+
+Whie there is nothing we can do about this at this point, it is an important thing to note for later.
+
+Finally, I did a pair plot to see how our variables compared with each other:
+
+![image](https://github.com/WiJaMa/wijama.github.io/assets/73615879/9bd7ec68-9794-494f-a538-2df045e3e837)
+
+It seems like there are some clear outliers, some from Asia and some from North America. As mentioned above, there are likely to be the US and China, the two largest economies in the world, and arise due to the aggregated (rather than per capita) nature of our data. 
+There are also clear lines being formed. This is because we included multiple years for each country; there is likely to be autocorrelation across time. THis will have to be dealt with in the final analysis.
+
+Since rail cargo, electricity consumption, and GDP are heavily right-skewed, it seems to have made them interact with other variables rather strangely. Let's produce a version of the data where all of these are logarithmed. 
+
+![image](https://github.com/WiJaMa/wijama.github.io/assets/73615879/ac2075bc-1c83-496e-a588-ba3114945fb8)
+
+This looks much better. The data appear much more normal and appear to have resolved any heteroskedasticity issues that may have been present earlier. The US and China are also no longer prominent outliers. This is the data I will use to complete the project.
