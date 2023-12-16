@@ -13,7 +13,7 @@ However, he fell from grace, in large part due to a diplomatic cable stolen and 
 This was widely reported at the time, most famously by [The Economist](https://www.economist.com/asia/2010/12/09/keqiang-ker-ching). Li died in October 2023 after being ousted from power in the 20th National Congress of the Chinese Communist Party and was replaced as premier by the similarly-named Li Qiang.
 
 <p align="center">
-![image](https://github.com/WiJaMa/wijama.github.io/assets/73615879/48417fb0-10c6-4209-a787-41d48fa397bc.png)
+![image]([https://github.com/WiJaMa/wijama.github.io/assets/73615879/48417fb0-10c6-4209-a787-41d48fa397bc.jpg](https://upload.wikimedia.org/wikipedia/commons/d/d4/Shinz%C5%8D_Abe_Li_Keqiang_20191225_%281%29_%28cropped%29.jpg))
 
 _Li Keqiang in 2019_ [_Image Source_](https://commons.wikimedia.org/wiki/File:Shinz%C5%8D_Abe_Li_Keqiang_20191225_(1)_(cropped).jpg)
 </p>
@@ -171,6 +171,7 @@ keqiang.to_csv('keqiang.csv', index = False)
 Most of the exploratory data analysis was performed in Seaborn. This blog post assumes that the reader knows the basics of Seaborn and does not need the Seaborn commands used explained to them.
 
 The rail cargo and GDP graphs are extremely right-skewed:
+
 ![image](https://github.com/WiJaMa/wijama.github.io/assets/73615879/1750a560-34b1-4236-a717-348650658598) ![image](https://github.com/WiJaMa/wijama.github.io/assets/73615879/42035b33-9553-4024-821f-6decddae6fb1)
 
 
