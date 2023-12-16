@@ -13,6 +13,7 @@ However, he fell from grace, in large part due to a diplomatic cable stolen and 
 This was widely reported at the time, most famously by [The Economist](https://www.economist.com/asia/2010/12/09/keqiang-ker-ching). Li died in October 2023 after being ousted from power in the 20th National Congress of the Chinese Communist Party and was replaced as premier by the similarly-named Li Qiang.
 
 <p align="center">
+
 ![image](https://github.com/WiJaMa/wijama.github.io/assets/73615879/48417fb0-10c6-4209-a787-41d48fa397bc)
 
 _Li Keqiang in 2019_ [_Image Source_](https://commons.wikimedia.org/wiki/File:Shinz%C5%8D_Abe_Li_Keqiang_20191225_(1)_(cropped).jpg)
@@ -178,4 +179,8 @@ However, they match a normal distribution much better when they are logarithmed:
 
 ![image](https://github.com/WiJaMa/wijama.github.io/assets/73615879/54b9deeb-9f5f-4222-92be-848a966280b2) ![image](https://github.com/WiJaMa/wijama.github.io/assets/73615879/ea16c106-f32f-481e-ba40-1e50756c7be0)
 
+A countplot of data points be region reveals some other concerns:
 
+![image](https://github.com/WiJaMa/wijama.github.io/assets/73615879/ba311bcc-7b61-4b02-985f-90404f9bd9ee)
+
+Most of the data points are from Europe. In our data wrangling, I implicitly decided to throw out any data point that didn't have every one of the variables I was examining. However, in doing so, I filtered out quite a bit of Latin America, Africa, and Asia. The effect was so great that Latin America only had 12 more data points than North America, a region which consists entirely of two countries, the United States and Canada. This could result in an implicit bias in our data set.
