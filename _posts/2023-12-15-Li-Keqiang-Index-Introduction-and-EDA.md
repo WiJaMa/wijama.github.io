@@ -14,7 +14,7 @@ This was widely reported at the time, most famously by [The Economist](https://w
 
 <p align="center">
   <img src="https://github.com/WiJaMa/wijama.github.io/assets/73615879/48417fb0-10c6-4209-a787-41d48fa397bc">
-  <p align="center"><em>Li Keqiang in 2019</em></p> <a align="center" href="https://commons.wikimedia.org/wiki/File:Shinz%C5%8D_Abe_Li_Keqiang_20191225_(1)_(cropped).jpg">Image Source</a>
+  <p align="center"><em>Li Keqiang in 2019</em> <a href="https://commons.wikimedia.org/wiki/File:Shinz%C5%8D_Abe_Li_Keqiang_20191225_(1)_(cropped).jpg">Image Source</a></p> 
 </p>
 
 # Project
