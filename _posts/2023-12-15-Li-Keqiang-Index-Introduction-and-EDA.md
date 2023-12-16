@@ -13,9 +13,9 @@ However, he fell from grace, in large part due to a diplomatic cable stolen and 
 This was widely reported at the time, most famously by [The Economist](https://www.economist.com/asia/2010/12/09/keqiang-ker-ching). Li died in October 2023 after being ousted from power in the 20th National Congress of the Chinese Communist Party and was replaced as premier by the similarly-named Li Qiang.
 
 <p align="center">
-![image](https://github.com/WiJaMa/wijama.github.io/assets/73615879/48417fb0-10c6-4209-a787-41d48fa397bc)
+[image](https://github.com/WiJaMa/wijama.github.io/assets/73615879/48417fb0-10c6-4209-a787-41d48fa397bc)
 
-_Li Keqiang in 2019 [Image Source]([url](https://commons.wikimedia.org/wiki/File:Shinz%C5%8D_Abe_Li_Keqiang_20191225_(1)_(cropped).jpg)
+_Li Keqiang in 2019 [Image Source](https://commons.wikimedia.org/wiki/File:Shinz%C5%8D_Abe_Li_Keqiang_20191225_(1)_(cropped).jpg)
 </p>
 
 # Project
@@ -27,4 +27,18 @@ For control variables, I also included in my analysis the percentage of the econ
 
 Because the Economist Democracy Index only includes the years 2006, 2008, and 2010-2022, those were the only years included in the analysis. This is where the V-Dem indices would likely have been more useful; they evaluate countries as far back as the year 1900.
 
+Ultimately, I was not able to find data on the volume of bank loans in China. This was a major weakness of my analysis.
+
 # Gathering Data
+
+The Democracy Index data was scraped right off of Wikipedia. This is the easiest way to access this data and is relatively simple to do because it has been put into a table.
+In fact, it can be scraped using Pandas alone. First, import Pandas:
+```
+import pandas as pd
+```
+Next, use pd.read_html() to send a get request to the Wikipedia page on the Economist Democracy Index and save all of the tables on the page:
+```
+tables=pd.read_html('https://en.wikipedia.org/wiki/The_Economist_Democracy_Index')
+```
+We required the table that lists the Democracy Index by country and year. It looks like this:
+[image](https://github.com/WiJaMa/wijama.github.io/assets/73615879/f0197ac2-3ed2-495d-94f5-f04a1e01b81d)
