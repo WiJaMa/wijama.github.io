@@ -13,8 +13,8 @@ However, he fell from grace, in large part due to a diplomatic cable stolen and 
 This was widely reported at the time, most famously by [The Economist](https://www.economist.com/asia/2010/12/09/keqiang-ker-ching). Li died in October 2023 after being ousted from power in the 20th National Congress of the Chinese Communist Party and was replaced as premier by the similarly-named Li Qiang.
 
 <p align="center">
-  <img width="460" height="300" src="https://github.com/WiJaMa/wijama.github.io/assets/73615879/48417fb0-10c6-4209-a787-41d48fa397bc">
-  <p>T<em>Li Keqiang in 2019</em></p> <a href="https://commons.wikimedia.org/wiki/File:Shinz%C5%8D_Abe_Li_Keqiang_20191225_(1)_(cropped).jpg">Image Source</a>
+  <img src="https://github.com/WiJaMa/wijama.github.io/assets/73615879/48417fb0-10c6-4209-a787-41d48fa397bc">
+  <p align="center"><em>Li Keqiang in 2019</em></p> <a align="center" href="https://commons.wikimedia.org/wiki/File:Shinz%C5%8D_Abe_Li_Keqiang_20191225_(1)_(cropped).jpg">Image Source</a>
 </p>
 
 # Project
