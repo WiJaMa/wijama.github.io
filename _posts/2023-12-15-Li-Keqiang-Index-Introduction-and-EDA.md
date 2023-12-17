@@ -166,6 +166,7 @@ democracy.to_csv('./Data/democracy.csv', index = False)
 energy_consumption.to_csv('./Data/energy_consumption.csv', index = False)
 keqiang.to_csv('keqiang.csv', index = False)
 ```
+This is important because it both saves you time and avoids putting load on the World Bank and Wikipedia servers every time you want to run the code.
 
 # Exploratory Data Analysis
 Most of the exploratory data analysis was performed in Seaborn. This blog post assumes that the reader knows the basics of Seaborn and does not need the Seaborn commands used explained to them.
