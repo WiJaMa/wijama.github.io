@@ -9,7 +9,9 @@ image: /assets/images/blog-image.jpg
 # Introduction
 
 Li Keqiang was the former premier of the People's Republic of China. He was seen by many in the West as a moderate in the Chinese Communist Party; compared to Xi Jinping, Li was more friendly to the West and more open to liberal economics. He was widely expected to be a major candidate to succeed Hu Jintao as paramount leader in 2012.
-However, he fell from grace, in large part due to a diplomatic cable stolen and leaked by Wikileaks in 2010. In this document, an ambassador claims to have been told by Li Keqiang that the GDP figures in Li's province of Liaoning were unreliable. Instead, Li said that he used three other indicators: the railway cargo volume, electricity consumption and loans disbursed by banks.
+
+However, he fell from grace, in large part due to a diplomatic cable stolen and leaked by Wikileaks in 2010. At the time, Li as the Party Secretary of Liaoning, effectively the governor of the province. In this document, an ambassador claimed to have been told by Li Keqiang that the GDP figures in Li's province of Liaoning were unreliable. Instead, Li said that he used three other indicators: the railway cargo volume, electricity consumption and loans disbursed by banks.
+
 This was widely reported at the time, most famously by [The Economist](https://www.economist.com/asia/2010/12/09/keqiang-ker-ching). Li died in October 2023 after being ousted from power in the 20th National Congress of the Chinese Communist Party and was replaced as premier by the similarly-named Li Qiang.
 
 <p align="center">
@@ -20,6 +22,7 @@ This was widely reported at the time, most famously by [The Economist](https://w
 # Project
 
 I wanted to see whether this index was actually a good reflection of modern economies. Two of the indicators are strongly connected with industrial development but not the modern service-oriented economy, while the other, volume of bank loans, is difficult to quantify. I was also curious whether the effectiveness of the indicator would vary with level of democracy.
+
 The measurement of democracy is, of course, a widely contested field. The two most famous indices dedicated to measuring democracy are the Economist Democracy Index and the V-Dem Democracy Indices. The latter are plural because V-Dem (or, the Varieties of Democracy Institute) developed multiple indices to measure different types of democracy: electoral, liberal, participatory, deliberative, and egalitarian. For simplicity, I chose to use the Economist Democracy Index.
 
 For control variables, I also included in my analysis the percentage of the economy made of services and the percentage of the population that was urban. I anticipated that these would have some effect on how, accurate the Li Keqiang index would be.
@@ -73,8 +76,7 @@ indicator.reset_index(inplace=True)
 The indicators I got from WBGAPI were [rail cargo volume](https://databank.worldbank.org/source/world-development-indicators/Series/IS.RRS.GOOD.MT.K6), [percent urban](https://databank.worldbank.org/source/world-development-indicators/Series/SP.URB.TOTL.IN.ZS), [percent GDP from services](https://databank.worldbank.org/metadataglossary/world-development-indicators/series/NV.SRV.TOTL.ZS), and [total GDP](https://databank.worldbank.org/source/world-development-indicators/Series/NY.GDP.MKTP.CD). 
 
 ## The Democracy Index
-The Democracy Index data was scraped right off of Wikipedia. This is the easiest way to access this data and is relatively simple to do because it has been put into a table.
-In fact, it can be scraped using Pandas alone. First, import Pandas:
+The Democracy Index data was scraped right off of Wikipedia. This is the easiest way to access this data and is relatively simple to do because it has been put into a table. In fact, it can be scraped using Pandas alone. First, import Pandas:
 ```python
 import pandas as pd
 ```
@@ -141,7 +143,7 @@ However, there is a bug in the current version with Vietnam, which I had to code
 merged_dem_en['Code'][merged_dem_en['Country'] == 'Vietnam'] = 'VNM'
 ```
 
-WIth everything prepared, I could merge both data frames together and drop the unneeded columns:
+With everything prepared, I could merge both data frames together and drop the unneeded columns:
 ```python
 keqiang = pd.merge(merged_dem_en, merged_df, left_on=['Code','Year'], right_on=['economy','time'])
 keqiang.drop(columns=['time','economy','Code'], inplace = True)
