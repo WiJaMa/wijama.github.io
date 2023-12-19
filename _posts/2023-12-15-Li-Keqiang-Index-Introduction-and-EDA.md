@@ -10,35 +10,37 @@ image: /assets/images/blog-image.jpg
 
 Li Keqiang was the former premier of the People's Republic of China. He was seen by many in the West as a moderate in the Chinese Communist Party; compared to Xi Jinping, Li was more friendly to the West and more open to liberal economics. He was widely expected to be a major candidate to succeed Hu Jintao as paramount leader in 2012.
 
-However, he fell from grace, in large part due to a diplomatic cable stolen and leaked by Wikileaks in 2010. At the time, Li as the Party Secretary of Liaoning, effectively the governor of the province. In this document, an ambassador claimed to have been told by Li Keqiang that the GDP figures in Li's province of Liaoning were unreliable. Instead, Li said that he used three other indicators: the railway cargo volume, electricity consumption and loans disbursed by banks.
+However, he fell from grace, in large part due to a diplomatic cable stolen and leaked by Wikileaks in 2010. At the time, Li as the Party Secretary of Liaoning, was effectively the governor of the province. In this document, an ambassador claimed to have been told by Li Keqiang that the GDP figures of Liaoning were unreliable. Instead, Li said that he used three other indicators: the railway cargo volume, electricity consumption and loans disbursed by banks.
 
 This was widely reported at the time, most famously by [The Economist](https://www.economist.com/asia/2010/12/09/keqiang-ker-ching). Li died in October 2023 after being ousted from power in the 20th National Congress of the Chinese Communist Party and was replaced as premier by the similarly-named Li Qiang.
 
 <p align="center">
   <img src="https://github.com/WiJaMa/wijama.github.io/assets/73615879/48417fb0-10c6-4209-a787-41d48fa397bc">
-  <p align="center"><em>Li Keqiang in 2019</em> <a href="https://commons.wikimedia.org/wiki/File:Shinz%C5%8D_Abe_Li_Keqiang_20191225_(1)_(cropped).jpg">Image Source</a></p> 
+  <p align="center"><em>Li Keqiang in 2019</em> <a href="https://commons.wikimedia.org/wiki/File:Shinz%C5%8D_Abe_Li_Keqiang_20191225_(1)_(cropped).jpg"><em>Image Source</em></a></p> 
 </p>
 
 # Project
 
 I wanted to see whether this index was actually a good reflection of modern economies. Two of the indicators are strongly connected with industrial development but not the modern service-oriented economy, while the other, volume of bank loans, is difficult to quantify. I was also curious whether the effectiveness of the indicator would vary with level of democracy.
 
-The measurement of democracy is, of course, a widely contested field. The two most famous indices dedicated to measuring democracy are the Economist Democracy Index and the V-Dem Democracy Indices. The latter are plural because V-Dem (or, the Varieties of Democracy Institute) developed multiple indices to measure different types of democracy: electoral, liberal, participatory, deliberative, and egalitarian. For simplicity, I chose to use the Economist Democracy Index.
+The measurement of democracy is, of course, a widely contested field. The two most famous indices dedicated to measuring democracy are the Economist Democracy Index and the V-Dem Democracy Indices. The latter are plural because V-Dem (or, the Varieties of Democracy Institute) has developed multiple indices to measure different types of democracy: electoral, liberal, participatory, deliberative, and egalitarian. For simplicity, I chose to use the Economist Democracy Index.
 
-For control variables, I also included in my analysis the percentage of the economy made of services and the percentage of the population that was urban. I anticipated that these would have some effect on how, accurate the Li Keqiang index would be.
+For control variables, I also included in my analysis the percentage of the economy made of services and the percentage of the population that was urban. I anticipated that these would have some effect on how accurate the Li Keqiang index would be.
 
-All of the variables included were used in their total, rather than per capita form. This is because Li Keqiang seemed to have been interested in total economic output of his province rather than per capita output. While this means there are likely to be outliers (in the form of the US and China, by far the world's largest economy), it is a more accurate reflection of his index.
+All of the variables included were used in their total, rather than per capita form. This is because Li Keqiang seemed to have been interested in total economic output of his province rather than per capita output. While this means there are likely to be outliers (in the form of the US and China, by far the world's largest economies), it is a more accurate reflection of his index.
 
-Because the Economist Democracy Index only includes the years 2006, 2008, and 2010-2022, those were the only years included in the analysis. This is where the V-Dem indices would likely have been more useful; they evaluate countries as far back as the year 1900. The data on the other indicators only ran as far forward as 2020, so the years used were 2006-2020.
+Because the Economist Democracy Index only includes the years 2006, 2008, and 2010-2022, those were the only years included in the analysis. This is where the V-Dem indices would likely have been more useful; they evaluate countries as far back as the year 1900. The data on the other indicators only ran as far forward as 2020, so the years used were 2006, 2008, and 2010-2020.
 
 Ultimately, I was not able to find data on the volume of bank loans in China. This was a major weakness of my analysis.
 
 # Gathering Data
 
-## World Bank Data
-The World Bank maintains a large database that includes data on a wide variety of economic indicators for every country in the world. Not every indicator is available in every year in every country, but it is extraoridinarily useful. The World Bank Databank can be accessed [here](https://databank.worldbank.org/source/world-development-indicators/). 
+Before we begin, you can follow along in my code by downloading it [here](https://github.com/WiJaMa/stat386-project/blob/main/project_EDA.ipynb).
 
-The database can be accessed using standard API calls as well. To do this, you will need to know the code for the indicators you want to use. This can be foudn at the end of the URL when you are accessing an indicator in the World Bank Databank:
+### World Bank Data
+The World Bank maintains a large database that includes data on a wide variety of economic indicators for every country in the world. Not every indicator is available in every year in every country, but it is extraordinarily useful. The World Bank Databank can be accessed [here](https://databank.worldbank.org/source/world-development-indicators/). 
+
+The database can be accessed using standard API calls as well. To do this, you will need to know the code for the indicators you want to use. This can be found at the end of the URL when you are accessing an indicator in the World Bank Databank:
 ![image](https://github.com/WiJaMa/wijama.github.io/assets/73615879/9a7053a3-6700-4adc-974e-8da94fe73e50)
 
 
@@ -59,7 +61,7 @@ status_code = response.status_code
 result = response.text
 ```
 
-However, cleaning up this data is hard work. Tim Herzog, a data scientist at the World Bank, [has created an API wrapper](https://blogs.worldbank.org/opendata/introducing-wbgapi-new-python-package-accessing-world-bank-data) to make it easier to access World Bank data. This API wrapper, called WBGAPI has much larger capabilities than we really need it for. It can be installed into your environment by running `pip install wbgapi`.  
+However, cleaning up this data is hard work. Tim Herzog, a data scientist at the World Bank, [has created an API wrapper](https://blogs.worldbank.org/opendata/introducing-wbgapi-new-python-package-accessing-world-bank-data) to make it easier to access World Bank data. This API wrapper, called WBGAPI, has much greater capabilities than we really need it for. It can be installed into your environment by running `pip install wbgapi`.  
 
 Once it's installed, import it:
 ```python
@@ -69,13 +71,13 @@ Now that it's imported, using it to query data is as easy as copying and pasting
 ```python
 indicator = wb.data.DataFrame({indicator}, time=range(2006, 2020), skipBlanks=True, columns='series')
 ```
-You'll want to replace the index on each indicator.
+You'll a;sp want to replace the index for each indicator table.
 ```python
 indicator.reset_index(inplace=True)
 ```
 The indicators I got from WBGAPI were [rail cargo volume](https://databank.worldbank.org/source/world-development-indicators/Series/IS.RRS.GOOD.MT.K6), [percent urban](https://databank.worldbank.org/source/world-development-indicators/Series/SP.URB.TOTL.IN.ZS), [percent GDP from services](https://databank.worldbank.org/metadataglossary/world-development-indicators/series/NV.SRV.TOTL.ZS), and [total GDP](https://databank.worldbank.org/source/world-development-indicators/Series/NY.GDP.MKTP.CD). 
 
-## The Democracy Index
+### The Democracy Index
 The Democracy Index data was scraped right off of Wikipedia. This is the easiest way to access this data and is relatively simple to do because it has been put into a table. In fact, it can be scraped using Pandas alone. First, import Pandas:
 ```python
 import pandas as pd
@@ -101,9 +103,9 @@ Finally, I reordered it to make it easier to keep track of what I would need to 
 democracy = democracy[['Country', 'Year', 'Region', 'Democracy Index']]
 ```
 
-## Electricity Consumption
-The final variable, electrictiy consumption, was downloaded as a CSV from the [US Energy Information Administration](https://www.eia.gov/international/data/world/electricity/electricity-consumption)
-This data requred significant cleanup to save just the columns I needed. I also renamed the unnamed Country column so that I could use it later, and melted the file into a tidy dataset with one Year column, like the Democracy Index data set. 
+### Electricity Consumption
+The final variable, electricity consumption, was downloaded as a CSV from the [US Energy Information Administration](https://www.eia.gov/international/data/world/electricity/electricity-consumption)
+This data requred significant cleanup to save just the columns I needed. I also named the unnamed Country column so that I could use it later, and melted the file into a tidy dataset with one Year column, like the Democracy Index data set. 
 ```python
 energy_consumption = pd.read_csv('Data/INT-Export-11-16-2023_15-35-19.csv')
 energy_consumption.rename(columns = {'Unnamed: 1':'Country'}, inplace=True)
@@ -111,14 +113,14 @@ energy_consumption.drop('API', axis=1, inplace=True)
 energy_consumption = energy_consumption.iloc[1: , :]
 energy_consumption = energy_consumption.melt(id_vars=['Country'], var_name= 'Year', value_name='energy_consumption')
 ```
-Finally, I inserted NAs into cells that had "---" in them (the EIA's placeholder symbol) and dropped the NAs. I also stripped the unneccesary spaces on the countries in the Country field:
+Finally, I inserted NAs into cells that had `--` in them (the EIA's placeholder symbol) and dropped the NAs. I also stripped the unnecessary spaces on the countries in the Country field:
 ```python
 energy_consumption.replace(to_replace='--',value=np.nan, inplace=True)
 energy_consumption.dropna(inplace=True)
 energy_consumption['Country'] = [item.strip() for item in energy_consumption['Country']]
 ```
 
-## Merging the tables
+### Merging the tables
 I couldn't find a way to merge multiple Pandas dataframes together at once, so I merged each of the World Bank dataframes one at a time:
 ```python
 merged_df = pd.merge(railcargo, percent_urban, on = ['economy', 'time'])
@@ -171,16 +173,15 @@ keqiang.to_csv('keqiang.csv', index = False)
 This is important because it both saves you time and avoids putting load on the World Bank and Wikipedia servers every time you want to run the code.
 
 # Exploratory Data Analysis
-Most of the exploratory data analysis was performed in Seaborn. This blog post assumes that the reader knows the basics of Seaborn and does not need the Seaborn commands used explained to them.
+Most of the exploratory data analysis was performed in Seaborn. This blog post assumes that the reader knows the basics of Seaborn and does not need the Seaborn commands used explained to them. The graphs used here can be explored in [the dashboard for this project](https://li-keqiang-index-project.streamlit.app/).
 
-The rail cargo, electricity consumption, and GDP graphs are extremely right-skewed:
+The rail cargo, electricity consumption, and GDP graphs are extremely right-skewed. We will not be able to create an accurate linear model with the raw data:
 
 ![image](https://github.com/WiJaMa/wijama.github.io/assets/73615879/1750a560-34b1-4236-a717-348650658598) ![image](https://github.com/WiJaMa/wijama.github.io/assets/73615879/42035b33-9553-4024-821f-6decddae6fb1) ![image](https://github.com/WiJaMa/wijama.github.io/assets/73615879/bca42fe2-b284-49e3-a406-d6f5797e0af4)
 
-However, they match a normal distribution much better when they are logarithmed:
+However, they match a normal distribution much better when they are logarithmed. This means we should be able to work with a logged version of the data just fine:
 
 ![image](https://github.com/WiJaMa/wijama.github.io/assets/73615879/54b9deeb-9f5f-4222-92be-848a966280b2) ![image](https://github.com/WiJaMa/wijama.github.io/assets/73615879/ea16c106-f32f-481e-ba40-1e50756c7be0) ![image](https://github.com/WiJaMa/wijama.github.io/assets/73615879/b7e97728-21be-47bc-90cc-d0734f598273)
-
 
 A countplot of data points be region reveals some other concerns:
 
@@ -188,11 +189,11 @@ A countplot of data points be region reveals some other concerns:
 
 Most of the data points are from Europe. In our data wrangling, I implicitly decided to throw out any data point that didn't have every one of the variables I was examining. However, in doing so, I filtered out quite a bit of Latin America, Africa, and Asia. The effect was so great that Latin America only had 12 more data points than North America, a region which consists entirely of two countries, the United States and Canada. This could result in an implicit bias in our data set.
 
-In fact, 42 out of the 93 countries in the data set are missing at least one value. Most of these are in the Middle East and Africa:
+In fact, 42 out of the 93 countries in the data set are missing at least one data point. Most of these are in the Middle East and Africa:
 
 ![image](https://github.com/WiJaMa/wijama.github.io/assets/73615879/009eb738-b62c-4fc0-82bb-6c27ec9237ae)
 
-Whie there is nothing we can do about this at this point, it is an important thing to note for later.
+While there is nothing we can do about this at this point, it is an important thing to note for later.
 
 Finally, I did a pair plot to see how our variables compared with each other:
 
@@ -206,3 +207,8 @@ Since rail cargo, electricity consumption, and GDP are heavily right-skewed, it 
 ![image](https://github.com/WiJaMa/wijama.github.io/assets/73615879/ac2075bc-1c83-496e-a588-ba3114945fb8)
 
 This looks much better. The data appear much more normal and appear to have resolved any heteroskedasticity issues that may have been present earlier. The US and China are also no longer prominent outliers. This is the data I will use to complete the project.
+
+# Data Ethics
+The data that I used for this project was ethically gathered. The World Bank Data was taken from their API, the Democracy Index data was scraped from a Wikipedia page (which Wikipedia's robots.txt explicitly allows) and the electricity consumption data was downloaded from a database that allows data to be downloaded for research like this. It was also saved to my computer to reduce the load on those other databases to the absolute minimum needed. However, there are ethical concerns with the _use_ of my data. As mentioned above, the data has many holes, primarily in the Middle East and Africa, which means that it potentially not accurately represent a large part of the world. This has serious implications for the use of this data. Because the data is dominated by European countries, the results of the data analysis will primarily reflect European economies, which are all in smaller, wealthier countries. As a result, may not be ethical to use this data to describe countries outside of the Western sphere. This will be discussed more in the following post.
+
+# [Click here to see the results of the analysis!](https://wijama.org/2023/12/17/Li-Keqiang-Index-Analysis-Discussion.html)
