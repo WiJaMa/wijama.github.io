@@ -26,13 +26,13 @@ url: "https://wijama.org" #  change this to "https://<your-github-username>.gith
 image: https://byu.box.com/shared/static/vr1pl21htstj1hwwxqg4igkv1fs2ayu1.jpg
 author: William Martindale
 copyright: William Martindale # Your initials or what you want the copyright to be.  Leave empty for no copyright
-footer_description: 'Copyright © 2023 William Martindale'
+#footer_description: 'Copyright © 2023 William Martindale'
 
 
 # Social media users names.  Leave fields blank that you don't want displayed
 twitter_username: 
-github_username:  
-linkedin_username: 
+github_username: WiJaMa
+linkedin_username: william-j-martindale
 dribbble_username: 
 facebook_username: 
 flickr_username:
