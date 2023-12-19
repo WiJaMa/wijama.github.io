@@ -1,4 +1,10 @@
-<!DOCTYPE html>
+---
+layout: post
+title:  "Testing the Li Keqiang Index: Analysis and Discussion"
+author: William Martindale
+description: The results of my Li Keqiang Index project.
+image: /assets/images/blog-image.jpg
+---
 <html>
 <head><meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
