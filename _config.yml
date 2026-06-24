@@ -63,7 +63,7 @@ author:
   bio    : "Social scientist, statistician, and some other S-words"
   links:
     - label: "BlueSky"
-      icon: ""fa-brands fa-bluesky""
+      icon: "fa-brands fa-bluesky"
       url: "wijama.bsky.social"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
@@ -75,7 +75,7 @@ author:
 footer:
   links:
     - label: "BlueSky"
-      icon: ""fa-brands fa-bluesky""
+      icon: "fa-brands fa-bluesky"
       url: "wijama.bsky.social"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
