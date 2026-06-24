@@ -3,6 +3,8 @@ permalink: /about/
 title: "About"
 ---
 
-Tempor velit sint sunt ipsum tempor enim ad qui ullamco. Est dolore anim ad velit duis dolore minim sunt aliquip amet commodo labore. Ut eu pariatur aute ea aute excepteur laborum. Esse ea esse excepteur minim mollit qui cillum excepteur ex dolore magna. Labore deserunt fugiat incididunt incididunt sint ea. Consequat dolore aute laboris quis proident quis non et est consectetur ex eiusmod sit culpa.
+Hello! Welcome to my website. Here you'll find information about me and whatever I'm working on.
 
-Cupidatat ea do et in excepteur in. Ad nostrud ut est esse eu duis ea sunt eiusmod. Aliquip tempor veniam sint elit fugiat. Velit incididunt laboris amet incididunt labore dolore irure velit excepteur commodo deserunt laborum. Consectetur eu fugiat veniam veniam Lorem labore magna eiusmod. Ea occaecat reprehenderit pariatur consectetur minim labore ut aliquip.
+I'm a Taiwanese-American statistician and political scientist. My research interests have included bureaucracy, political thought, and political communication in the Chinese-speaking world. In the past, I've written on conspiracy theories in China and Taiwan and the political ideology of Chinese economics discourse. Currently, I'm working on a project about the institutional and bureaucratic evolution of China's Taiwan Affairs Office. Updates on the project will be posted here periodically.
+
+I recently graduated from UCSD with a Master of Chinese Economic and Political Affairs. Currently, I'm still looking for a job, so if you like what you see and would like to learn more, please feel free to contact me!
