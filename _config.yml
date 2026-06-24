@@ -64,7 +64,7 @@ author:
   links:
     - label: "BlueSky"
       icon: "fa-brands fa-bluesky"
-      url: "wijama.bsky.social"
+      url: "https://wijama.bsky.social"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/WiJaMa"
@@ -76,7 +76,7 @@ footer:
   links:
     - label: "BlueSky"
       icon: "fa-brands fa-bluesky"
-      url: "wijama.bsky.social"
+      url: "https://wijama.bsky.social"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/WiJaMa"
